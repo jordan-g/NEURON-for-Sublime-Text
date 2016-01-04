@@ -18,27 +18,34 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>\b(\\\*)\b</string>
+			<string>^\/\*\s*\n?</string>
 			<key>beginCaptures</key>
 			<dict>
-				<key>1</key>
+				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.other.neuron</string>
+					<string>punctuation.definition.comment.begin.neuron</string>
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>\b(\*\\)\b</string>
+			<string>(\1)\*\/$\n?</string>
 			<key>endCaptures</key>
 			<dict>
-				<key>1</key>
+				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.other.neuron</string>
+					<string>punctuation.definition.comment.begin.neuron</string>
 				</dict>
 			</dict>
 			<key>name</key>
 			<string>comment.block.neuron</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#macro</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>match</key>
