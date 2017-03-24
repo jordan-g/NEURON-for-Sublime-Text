@@ -1,8 +1,7 @@
-NEURON-for-Sublime-Text
-=======================
+# NEURON-for-Sublime-Text
 
-NEURON .hoc and .mod syntax highlighting for Sublime Text.
+NEURON .hoc, .ses, .inc and .mod syntax highlighting for Sublime Text.
 
-**Installation:**
+## Installation
 
 Place .tmLanguage files in your user packages folder.
