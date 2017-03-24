@@ -5,26 +5,45 @@
 	<key>fileTypes</key>
 	<array>
 		<string>hoc</string>
+		<string>ses</string>
 	</array>
 	<key>name</key>
 	<string>Neuron</string>
 	<key>patterns</key>
 	<array>
 		<dict>
-			<key>match</key>
-			<string>(//).*$\n?</string>
-			<key>name</key>
-			<string>comment.line.neuron</string>
-		</dict>
-		<dict>
 			<key>begin</key>
-			<string>^\/\*\s*\n?</string>
+			<string>//</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.comment.begin.neuron</string>
+					<string>comment.line.begin.neuron</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>$\n?</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>comment.line.end.neuron</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>comment.line.neuron</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>/\*</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>comment.block.begin.neuron</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -34,18 +53,11 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.comment.begin.neuron</string>
+					<string>comment.block.end.neuron</string>
 				</dict>
 			</dict>
 			<key>name</key>
 			<string>comment.block.neuron</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#macro</string>
-				</dict>
-			</array>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -61,7 +73,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.string.begin.neuron</string>
+					<string>string.begin.neuron</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -71,7 +83,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.string.end.neuron</string>
+					<string>string.end.neuron</string>
 				</dict>
 			</dict>
 			<key>name</key>
@@ -96,7 +108,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.string.begin.neuron</string>
+					<string>string.begin.neuron</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -106,7 +118,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.string.end.neuron</string>
+					<string>string.end.neuron</string>
 				</dict>
 			</dict>
 			<key>name</key>
@@ -144,7 +156,7 @@
 			<key>match</key>
 			<string>\b(PI|E|GAMMA|DEG|PHI|FARADAY|R)\b</string>
 			<key>name</key>
-			<string>constant.other.neuron</string>
+			<string>constant.numeric.neuron</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -172,7 +184,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(hoc_ac_|float_epsilon|hoc_cross_x_|hoc_cross_y_|default_dll_loaded_)\b</string>
+			<string>\b(hoc_ac_|float_epsilon|hoc_cross_x_|hoc_cross_y_|default_dll_loaded_|celsius|dt|t|stoprun|secondorder|clamp_resist)\b</string>
 			<key>name</key>
 			<string>support.variable.neuron</string>
 		</dict>
